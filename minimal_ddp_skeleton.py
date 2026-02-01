@@ -45,9 +45,7 @@ def main():
     metrics_f = None
     writer = None
     if rank == 0:
-        metrics_f = open("metrics.csv", "w", newline="")
-        writer = csv.writer(metrics_f)
-        writer.writerow(["step", "loss", "effective_batch_size", "world_size", "accum_steps"])
+        print(f"[Gloo] initialized world_size={world_size}")
 
     optim.zero_grad(set_to_none=True)
 
