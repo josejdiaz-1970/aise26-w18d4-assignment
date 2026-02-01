@@ -8,13 +8,15 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.nn.parallel import DistributedDataParallel as DDP
-from torch.multiprocessing import spawn
+from torch.multiprocessing.spawn import spawn
 from torch.utils.data import DataLoader, Dataset, DistributedSampler
 
 
 # -------------------------
 # Simple config
 # -------------------------
+
+
 @dataclass
 class DemoConfig:
     # Use a moderately larger model so that
